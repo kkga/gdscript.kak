@@ -35,24 +35,22 @@ provide-module gdscript %§
 
 add-highlighter shared/gdscript regions
 add-highlighter shared/gdscript/code default-region group
-# add-highlighter shared/gdscript/docstring     region -match-capture ^\h*("""|''') (?<!\\)(?:\\\\)*("""|''') regions
-# add-highlighter shared/gdscript/triple_string region -match-capture ("""|''') (?<!\\)(?:\\\\)*("""|''') fill string
 add-highlighter shared/gdscript/double_string region '"'   (?<!\\)(\\\\)*"  fill string
 add-highlighter shared/gdscript/single_string region "'"   (?<!\\)(\\\\)*'  fill string
 add-highlighter shared/gdscript/comment       region '#'   '$'              fill comment
 
 # integers
-add-highlighter shared/gdscript/code/                       regex '(?i)\b0b[01]+l?\b' 0:value
-add-highlighter shared/gdscript/code/                       regex '(?i)\b0x[\da-f]+l?\b' 0:value
-add-highlighter shared/gdscript/code/                       regex '(?i)\b0o?[0-7]+l?\b' 0:value
-add-highlighter shared/gdscript/code/                       regex '(?i)\b([1-9]\d*|0)l?\b' 0:value
+add-highlighter shared/gdscript/code/ regex '(?i)\b0b[01]+l?\b'               0:value
+add-highlighter shared/gdscript/code/ regex '(?i)\b0x[\da-f]+l?\b'            0:value
+add-highlighter shared/gdscript/code/ regex '(?i)\b0o?[0-7]+l?\b'             0:value
+add-highlighter shared/gdscript/code/ regex '(?i)\b([1-9]\d*|0)l?\b'          0:value
 # floats
-add-highlighter shared/gdscript/code/                       regex '\b\d+[eE][+-]?\d+\b' 0:value
-add-highlighter shared/gdscript/code/                       regex '(\b\d+)?\.\d+\b' 0:value
-add-highlighter shared/gdscript/code/                       regex '\b\d+\.' 0:value
+add-highlighter shared/gdscript/code/ regex '\b\d+[eE][+-]?\d+\b'             0:value
+add-highlighter shared/gdscript/code/ regex '(\b\d+)?\.\d+\b'                 0:value
+add-highlighter shared/gdscript/code/ regex '\b\d+\.'                         0:value
 # functions
-add-highlighter shared/gdscript/code/                       regex _?[a-zA-Z]\w*\s*(?=\() 0:function
-add-highlighter shared/gdscript/code/                       regex (?:func\h+)(_?\w+)(?:<[^>]+?>)?\( 1:function
+add-highlighter shared/gdscript/code/ regex _?[a-zA-Z]\w*\s*(?=\()            0:function
+add-highlighter shared/gdscript/code/ regex (?:func\h+)(_?\w+)(?:<[^>]+?>)?\( 1:function
 
 
 # add-highlighter shared/gdscript/code/ regex (?<=[\w\s\d\)\]'"_])(<=|<<|>>|>=|<>?|>|!=|==|\||\^|&|\+|-|\*\*?|//?|%|~) 0:operator
