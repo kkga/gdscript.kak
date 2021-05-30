@@ -52,8 +52,7 @@ add-highlighter shared/gdscript/code/ regex '\b\d+\.'                         0:
 add-highlighter shared/gdscript/code/ regex _?[a-zA-Z]\w*\s*(?=\()            0:function
 add-highlighter shared/gdscript/code/ regex (?:func\h+)(_?\w+)(?:<[^>]+?>)?\( 1:function
 
-
-# add-highlighter shared/gdscript/code/ regex (?<=[\w\s\d\)\]'"_])(<=|<<|>>|>=|<>?|>|!=|==|\||\^|&|\+|-|\*\*?|//?|%|~) 0:operator
+add-highlighter shared/gdscript/code/ regex '(?:\+|-|\*|/|%|=|<|>|&|\||\^|~|:=)' 0:operator
 
 evaluate-commands %sh{
     keywords="if elif else for while match break continue pass return class
