@@ -80,6 +80,10 @@ evaluate-commands %sh{
     "
 }
 
+# nodes
+add-highlighter shared/gdscript/code/ regex '\$[\w/]*'                        0:module
+
+
 # Commands
 # ‾‾‾‾‾‾‾‾
 
